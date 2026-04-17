@@ -25,3 +25,26 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Artifacts
+
+### Padma Priya Enterprises (artifacts/padma-priya)
+- **Type**: React + Vite frontend-only website (JavaScript)
+- **Preview path**: `/`
+- **Purpose**: Vehicle rental business landing page — Padma Priya Enterprises
+- **Stack**: React, Vite, Tailwind CSS, Framer Motion, Lucide React
+- **Features**:
+  - Sticky responsive navbar with mobile hamburger menu
+  - Hero section with WhatsApp CTA
+  - Stats bar with animated counters
+  - Vehicle fleet section with filter tabs (All/Hatchback/Sedan/SUV)
+  - Services section (4 service cards)
+  - Why Choose Us section
+  - Booking form (UI-only, submits via WhatsApp)
+  - Testimonials section
+  - Contact section
+  - Footer
+  - Floating WhatsApp button
+- **Data**: Static JSON at src/data/vehicles.json
+- **Booking**: All actions open WhatsApp with pre-filled messages
+- **No backend**: Fully static, deployable on any static host

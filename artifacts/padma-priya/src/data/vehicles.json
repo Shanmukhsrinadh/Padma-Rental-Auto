@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Maruti Swift",
+    "type": "Hatchback",
+    "seats": 5,
+    "pricePerDay": 1200,
+    "pricePerKm": 12,
+    "features": ["AC", "Music System", "GPS"],
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1541443131876-6290756f1e71?w=600&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Honda City",
+    "type": "Sedan",
+    "seats": 5,
+    "pricePerDay": 1800,
+    "pricePerKm": 16,
+    "features": ["AC", "Music System", "GPS", "Sunroof"],
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Toyota Innova",
+    "type": "SUV",
+    "seats": 7,
+    "pricePerDay": 2500,
+    "pricePerKm": 20,
+    "features": ["AC", "Music System", "GPS", "Spacious"],
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=600&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Mahindra Scorpio",
+    "type": "SUV",
+    "seats": 7,
+    "pricePerDay": 2800,
+    "pricePerKm": 22,
+    "features": ["AC", "Music System", "GPS", "4WD"],
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Maruti Dzire",
+    "type": "Sedan",
+    "seats": 5,
+    "pricePerDay": 1500,
+    "pricePerKm": 14,
+    "features": ["AC", "Music System", "GPS"],
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Toyota Fortuner",
+    "type": "SUV",
+    "seats": 7,
+    "pricePerDay": 4500,
+    "pricePerKm": 30,
+    "features": ["AC", "Music System", "GPS", "4WD", "Leather Seats"],
+    "available": false,
+    "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80"
+  }
+]
