@@ -1,61 +1,123 @@
-import { Car, MapPin, Phone, Mail } from "lucide-react";
+const WA = 'https://wa.me/919876543210?text=Hi!%20I%20have%20a%20query.';
 
-export function Footer() {
+const cols = [
+  {
+    title: 'Quick Links',
+    items: [
+      { label: 'Home', href: '#home' },
+      { label: 'Our Fleet', href: '#vehicles' },
+      { label: 'Services', href: '#services' },
+      { label: 'About', href: '#about' },
+      { label: 'Contact', href: '#contact' },
+    ],
+  },
+  {
+    title: 'Services',
+    items: [
+      { label: 'Car Rentals' },
+      { label: 'Driver-Assisted Travel' },
+      { label: 'Airport Transfers' },
+      { label: 'Outstation Packages' },
+    ],
+  },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-accent text-white py-16">
-      <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-        <div className="col-span-1 md:col-span-1">
-          <div className="flex items-center gap-2 text-2xl font-bold font-serif mb-4">
-            <Car className="w-8 h-8 text-primary" />
-            <span>Padma Priya</span>
+    <footer style={{ background: 'var(--navy)', color: 'white', paddingTop: 64, paddingBottom: 32 }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
+          {/* Brand */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <div style={{ width: 38, height: 38, background: 'var(--orange)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                  <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-4 12h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H12a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 700, fontSize: 16 }}>Padma Priya</div>
+                <div style={{ fontSize: 10, color: 'rgba(255,255,255,.45)', letterSpacing: '.06em', textTransform: 'uppercase' }}>Enterprises</div>
+              </div>
+            </div>
+            <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.7, maxWidth: 280, marginBottom: 20 }}>
+              Your trusted local vehicle rental partner since 2014. Reliable cars, professional drivers, and 24/7 support.
+            </p>
+            <a href={WA} target="_blank" rel="noreferrer" className="btn btn-whatsapp" style={{ fontSize: 13, padding: '10px 18px' }}>
+              Chat on WhatsApp
+            </a>
           </div>
-          <p className="text-white/80 mb-6 text-sm leading-relaxed">
-            Your trusted local partner for vehicle rentals, travel assistance, and reliable financial services in the heart of the community.
+
+          {/* Link cols */}
+          {cols.map(col => (
+            <div key={col.title}>
+              <div style={{ fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '.08em', color: 'rgba(255,255,255,.4)', marginBottom: 20 }}>
+                {col.title}
+              </div>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {col.items.map(item => (
+                  <li key={item.label}>
+                    {item.href ? (
+                      <a href={item.href} style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, transition: 'color .2s' }}
+                         onMouseEnter={e => e.target.style.color = 'white'}
+                         onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,.7)'}>
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14 }}>{item.label}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Contact */}
+          <div>
+            <div style={{ fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '.08em', color: 'rgba(255,255,255,.4)', marginBottom: 20 }}>
+              Contact
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              {[
+                { icon: '📍', text: '123 Main Street, City Center, Tamil Nadu, India' },
+                { icon: '📞', text: '+91 98765 43210', href: 'tel:+919876543210' },
+                { icon: '✉️', text: 'contact@padmapriya.com', href: 'mailto:contact@padmapriya.com' },
+              ].map(c => (
+                <div key={c.text} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: 14 }}>{c.icon}</span>
+                  {c.href ? (
+                    <a href={c.href} style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, lineHeight: 1.5, transition: 'color .2s' }}
+                       onMouseEnter={e => e.target.style.color = 'white'}
+                       onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,.7)'}>
+                      {c.text}
+                    </a>
+                  ) : (
+                    <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, lineHeight: 1.5 }}>{c.text}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ borderTop: '1px solid rgba(255,255,255,.08)', paddingTop: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+          <p style={{ color: 'rgba(255,255,255,.35)', fontSize: 13 }}>
+            &copy; {new Date().getFullYear()} Padma Priya Enterprises. All rights reserved.
+          </p>
+          <p style={{ color: 'rgba(255,255,255,.25)', fontSize: 12 }}>
+            Vehicle Rental &nbsp;|&nbsp; Driver Services &nbsp;|&nbsp; Airport Transfers
           </p>
         </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-4 font-serif">Quick Links</h4>
-          <ul className="space-y-3 text-white/80 text-sm">
-            <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
-            <li><a href="#vehicles" className="hover:text-primary transition-colors">Our Fleet</a></li>
-            <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-            <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-4 font-serif">Services</h4>
-          <ul className="space-y-3 text-white/80 text-sm">
-            <li>Car Rentals</li>
-            <li>Driver Assistance</li>
-            <li>Airport Transfers</li>
-            <li>Outstation Travel</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-4 font-serif">Contact</h4>
-          <ul className="space-y-4 text-white/80 text-sm">
-            <li className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-primary shrink-0" />
-              <span>123 Main Street, City Center, State, India 123456</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-primary shrink-0" />
-              <span>+91 98765 43210</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-primary shrink-0" />
-              <span>contact@padmapriya.com</span>
-            </li>
-          </ul>
-        </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 mt-16 pt-8 border-t border-white/10 text-center text-white/60 text-sm">
-        <p>&copy; {new Date().getFullYear()} Padma Priya Enterprises. All rights reserved.</p>
-      </div>
+      <style>{`
+        @media (max-width: 900px) {
+          footer .container > div:first-child { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 560px) {
+          footer .container > div:first-child { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   );
 }
